@@ -10,27 +10,42 @@ This project implements a scalable real-time backend system for processing custo
 
 ## Quick Start
 
-1. Run Kafka server by Docker:
+- Standard
 
-   ```sh
-   sudo docker pull apache/kafka:3.7.0
-   ```
+  1.  Run Kafka server by Docker:
 
-2. Run the image on the required port 9292:
+      ```sh
+      sudo docker pull apache/kafka:3.7.0
+      ```
 
-   ```sh
-   sudo docker run -p 9092:9092 apache/kafka:3.7.0
-   ```
+  2.  Run the image on the required port 9292:
 
-3. Run the producer HTTP server:
+      ```sh
+      sudo docker run -p 9092:9092 apache/kafka:3.7.0
+      ```
 
-   ```sh
-   cd producer
-   go run main.go
-   ```
+  3.  Run the producer HTTP server:
 
-4. Run the worker (consumer) HTTP server:
-   ```sh
-   cd worker
-   go run main.go
-   ```
+      ```sh
+      cd producer
+      go run main.go
+      ```
+
+  4.  Run the worker (consumer) HTTP server:
+      ```sh
+      cd worker
+      go run main.go
+      ```
+
+- w/ Docker Compose
+
+  1.  Build two images by Docker:
+
+      ```sh
+      docker compose build
+      ```
+
+  2.  Run Docker Compose:
+      ```sh
+      docker compose up -d
+      ```
